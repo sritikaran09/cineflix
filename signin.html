@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Form | By Code Info</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <input type="checkbox" id="show">
+    <label for="show" class="show-btn">Click Here</label>
+
+    <div class="container">
+        <label for="show" class="close-btn" title="close">×</label>
+        <h1>Sign IN</h1>
+        <h3 class="lin">Already a user? Login </h3>
+        <div class="contact-form">
+			<form onsubmit="SendEmail();reset(); return false">
+				<input type="name" id="name" placeholder="Your Name"  required>
+				<input type="email" id="email" placeholder="Your Email Address" required>
+				<input type="number" id="number"  placeholder="Your Mobile Number" required>
+				<input name="" id="subject"  placeholder="How Can I Help You" required></input>
+				<input type="submit" value="Sign in" class="submit" required>
+			</form>
+		</div>
+        <closeform></closeform></form>
+    </div>
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        function SendEmail() {
+			let name = document.getElementById("name").value;
+			let email = document.getElementById("email").value;
+			let number = document.getElementById("number").value;
+			let subject = document.getElementById("subject").value;
+let body = "name: " + name + "<br/> email: " + email + "<br/> number: " + number + " <br/> subject: " + subject ;
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "sahoosriti48@gmail.com",
+                Password: "5994B7E02E27346F0CC02AC3EDCB71AEFABC",
+                To: 'sritikaran09@gmail.com',
+                From: "sahoosriti48@gmail.com",
+                Subject: subject ,
+                Body: body
+            }).then(
+                message => alert(message)
+            );
+        }
+    </script>
+</body>
+</html>
