@@ -1,1 +1,1 @@
-# hosted-cineflix
+cineflix
